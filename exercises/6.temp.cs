@@ -1,7 +1,11 @@
 
 class TemperatureException : Exception
 {
-    // your constructors here
+    public TemperatureException(string message) : base(message)
+    {
+        public int Temperature { get; set; }
+        
+    }
 }
 
 // program below...

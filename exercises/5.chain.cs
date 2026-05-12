@@ -28,10 +28,4 @@ try
 catch (ArgumentException ex)
 {
     Console.WriteLine(ex.Message);
-
-    if (ex.InnerException != null)
-    {
-        Console.WriteLine(
-            $"Inner: {ex.InnerException.Message}");
-    }
 }
