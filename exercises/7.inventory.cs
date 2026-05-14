@@ -8,8 +8,7 @@ class ItemNotFoundException : InventoryException
 {
     public string ItemName { get; }
 
-    public ItemNotFoundException(string itemName)
-        : base($"'{itemName}' does not exist in the inventory.")
+    public ItemNotFoundException(string itemName) : base($"{itemName} does not exist in the inventory.")
     {
         ItemName = itemName;
     }
@@ -21,8 +20,7 @@ class InsufficientQuantityException : InventoryException
     public int    Requested { get; }
     public int    Available { get; }
 
-    public InsufficientQuantityException(string itemName, int requested, int available)
-        : base($"Not enough '{itemName}': requested {requested}, but only {available} available.")
+    public InsufficientQuantityException(string itemName, int requested, int available) : base($"Not enough {itemName}: requested {requested}, but only {available} available.")
     {
         ItemName  = itemName;
         Requested = requested;
@@ -61,8 +59,7 @@ class Inventory
     public void Display() //Used claude for the table/UI aspect
     {
         Console.WriteLine("\n── Inventory ───────────────────────");
-        foreach (var entry in _items)
-            Console.WriteLine($"  {entry.Key,-15} x{entry.Value}");
+        foreach (var entry in _items) Console.WriteLine($"  {entry.Key,-15} x{entry.Value}");
         Console.WriteLine("────────────────────────────────────\n");
     }
 }
