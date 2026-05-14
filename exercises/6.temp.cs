@@ -33,7 +33,7 @@ class Program
 
         foreach (string input in inputs)
         {
-            Console.Write($"Input \"{input}\": ");
+            Console.Write($"Input {input}: ");
             try
             {
                 double celsius = double.Parse(input);
@@ -46,7 +46,7 @@ class Program
             }
             catch (FormatException)
             {
-                Console.WriteLine($"[FormatException] \"{input}\" is not a valid number.");
+                Console.WriteLine($"[FormatException] {input} is not a valid number.");
             }
         }
     }
